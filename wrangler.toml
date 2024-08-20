@@ -1,14 +1,14 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "website"
-compatibility_date = "<TBD>"
+name = "expensenischal"
+compatibility_date = "2023-12-14"
 pages_build_output_dir = "./build/client"
 
 # Automatically place your workloads in an optimal location to minimize latency.
 # If you are running back-end logic in a Pages Function, running it closer to your back-end infrastructure
 # rather than the end user may result in better performance.
 # Docs: https://developers.cloudflare.com/pages/functions/smart-placement/#smart-placement
-# [placement]
-# mode = "smart"
+[placement]
+mode = "smart"
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Docs:
