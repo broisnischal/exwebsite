@@ -18,12 +18,53 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className="font-sans p-4">
-      <ModeToggle />
-
+      <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+        <Link
+          to="#"
+          className="flex items-center gap-2 text-lg font-semibold md:text-base"
+        >
+          <Package2 className="h-6 w-6" />
+          <span className="sr-only">Acme Inc</span>
+        </Link>
+        <Link
+          to="#"
+          className="text-foreground transition-colors hover:text-foreground"
+        >
+          Dashboard
+        </Link>
+        <Link
+          to="#"
+          className="text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Orders
+        </Link>
+        <Link
+          to="#"
+          className="text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Products
+        </Link>
+        <Link
+          to="#"
+          className="text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Customers
+        </Link>
+        <Link
+          to="#"
+          className="text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Analytics
+        </Link>
+        <div className="navbar ml-auto">
+          <ModeToggle />
+        </div>
+      </nav>
+      <br />
       <MainHeader />
       <br />
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         <div className="section-1" data-swapy-slot="foo">
           <div className="content-a" data-swapy-item="a">
             <Chart />
@@ -48,7 +89,7 @@ export default function Index() {
 
 ("use client");
 
-import { TrendingUp } from "lucide-react";
+import { Package2, TrendingUp } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 
 import {
@@ -67,6 +108,7 @@ import {
 } from "@/components/ui/chart";
 import { MainHeader } from "@/components/charts/main_featured";
 import { ModeToggle } from "@/components/common/modetoggle";
+import { Link } from "@remix-run/react";
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },
   { month: "February", desktop: 305, mobile: 200 },
