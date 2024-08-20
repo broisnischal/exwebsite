@@ -1,4 +1,9 @@
+import { Barchart } from "@/components/charts/bar-chart";
+import { Chart } from "@/components/charts/test";
+import { Button } from "@/components/ui/button";
 import type { MetaFunction } from "@remix-run/cloudflare";
+import { useEffect } from "react";
+import { createSwapy } from "swapy";
 
 export const meta: MetaFunction = () => {
   return [
@@ -13,29 +18,22 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className="font-sans p-4">
-      <h1 className="text-3xl">Welcome to Remix on Cloudflare</h1>
-      <ul className="list-disc mt-4 pl-6 space-y-2">
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://remix.run/docs"
-            rel="noreferrer"
-          >
-            Remix Docs
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-blue-700 underline visited:text-purple-900"
-            target="_blank"
-            href="https://developers.cloudflare.com/pages/framework-guides/deploy-a-remix-site/"
-            rel="noreferrer"
-          >
-            Cloudflare Pages Docs - Remix guide
-          </a>
-        </li>
-      </ul>
+      <h1 className="text-3xl font-bold my-10 text-center">Expenseto</h1>
+      <div className="grid grid-cols-3 gap-4">
+        <div className="section-1" data-swapy-slot="foo">
+          <div className="content-a" data-swapy-item="a">
+            <Chart />
+          </div>
+        </div>
+
+        <div className="section-2" data-swapy-slot="bar">
+          <div className="content-b" data-swapy-item="b">
+            <Barchart />
+
+            <div className="handle" data-swapy-handle></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
